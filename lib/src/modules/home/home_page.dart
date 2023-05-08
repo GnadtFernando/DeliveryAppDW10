@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../core/env/env.dart';
 import '../../core/ui/helpers/loader.dart';
 import '../../core/ui/helpers/messages.dart';
-import '../../core/ui/size_extensions.dart';
 import '../../core/ui/styles/colors_app.dart';
-import '../../core/ui/styles/text_styles.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
