@@ -141,10 +141,10 @@ class _LoginPageState extends State<LoginPage> with Loader, Messages {
                           validator:
                               Validatorless.required('Senha Obrigatória'),
                         ),
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 30),
                         SizedBox(
                           width: double.infinity,
-                          height: 30,
+                          height: 50,
                           child: ElevatedButton(
                             onPressed: _formSubmit,
                             child: const Text('Entrar'),
