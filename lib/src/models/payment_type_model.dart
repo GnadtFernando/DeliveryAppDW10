@@ -3,22 +3,22 @@ import 'dart:convert';
 class PaymentTypeModel {
   final int? id;
   final String name;
-  final String acronya;
-  final bool enable;
+  final String acronym;
+  final bool enabled;
 
   PaymentTypeModel({
     this.id,
     required this.name,
-    required this.acronya,
-    required this.enable,
+    required this.acronym,
+    required this.enabled,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'name': name,
-      'acronya': acronya,
-      'enable': enable,
+      'acronym': acronym,
+      'enabled': enabled,
     };
   }
 
@@ -26,8 +26,8 @@ class PaymentTypeModel {
     return PaymentTypeModel(
       id: map['id'] != null ? map['id'] as int : null,
       name: map['name'] as String,
-      acronya: map['acronya'] as String,
-      enable: map['enable'] as bool,
+      acronym: map['acronym'] as String,
+      enabled: map['enabled'] as bool,
     );
   }
 

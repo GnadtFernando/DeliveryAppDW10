@@ -8,13 +8,13 @@ class AuthModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'acess_token': acessToken,
+      'access_token': acessToken,
     };
   }
 
   factory AuthModel.fromMap(Map<String, dynamic> map) {
     return AuthModel(
-      acessToken: (map['acess_token'] ?? '') as String,
+      acessToken: map['access_token'],
     );
   }
 
