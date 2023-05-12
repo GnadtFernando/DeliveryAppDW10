@@ -24,13 +24,15 @@ class OrderItem extends StatelessWidget {
               child: Row(
                 children: [
                   Text('Pedido', style: textStyles.textBold),
-                  Text('1', style: textStyles.textExtraBold),
+                  Text('${order.id}', style: textStyles.textExtraBold),
                   Expanded(
                     child: Text(
-                      'Cancelado',
+                      order.status.name,
                       textAlign: TextAlign.end,
-                      style: textStyles.textExtraBold
-                          .copyWith(fontSize: 20, color: Colors.red),
+                      style: textStyles.textExtraBold.copyWith(
+                        fontSize: 20,
+                        color: order.status.colors,
+                      ),
                     ),
                   ),
                   const SizedBox(

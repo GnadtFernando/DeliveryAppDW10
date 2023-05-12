@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
@@ -60,14 +61,19 @@ class _OrderPageState extends State<OrderPage> with Loader, Messages {
               const OrderHeader(),
               const SizedBox(height: 50),
               Expanded(
-                child: GridView.builder(
-                  itemCount: controller.orders.length,
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    mainAxisExtent: 91,
-                    maxCrossAxisExtent: 600,
-                  ),
-                  itemBuilder: (context, index) {
-                    return OrderItem(order: controller.orders[index]);
+                child: Observer(
+                  builder: (_) {
+                    return GridView.builder(
+                      itemCount: controller.orders.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                        mainAxisExtent: 91,
+                        maxCrossAxisExtent: 600,
+                      ),
+                      itemBuilder: (context, index) {
+                        return OrderItem(order: controller.orders[index]);
+                      },
+                    );
                   },
                 ),
               ),
