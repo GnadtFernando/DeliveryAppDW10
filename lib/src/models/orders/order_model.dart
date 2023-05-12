@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'order_product_model.dart';
@@ -28,7 +29,7 @@ class OrderModel {
       'id': id,
       'date': date.toIso8601String(),
       'status': status.acronym,
-      'order_products': orderProducts.map((x) => x.toMap()).toList(),
+      'products': orderProducts.map((x) => x.toMap()).toList(),
       'user_id': userId,
       'address': address,
       'cpf': cpf,
