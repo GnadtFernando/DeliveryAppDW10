@@ -38,7 +38,7 @@ class OrderRepositoryImpl implements OrderRepository {
   ]) async {
     try {
       final orderResponse = await _dio.auth().get(
-        '/orders/',
+        '/orders',
         queryParameters: {
           'date': date.toIso8601String(),
           if (status != null) 'status': status.acronym

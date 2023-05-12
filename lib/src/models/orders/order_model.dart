@@ -38,17 +38,17 @@ class OrderModel {
 
   factory OrderModel.fromMap(Map<String, dynamic> map) {
     return OrderModel(
-      id: map['id'] as int,
-      date: DateTime.parse(map['date']),
+      id: (map['id'] ?? 0) as int,
+      date: DateTime.parse((map['date'])),
       status: OrderStatus.parse(map['status']),
       orderProducts: List<OrderProductModel>.from(
-        (map['products'] as List<int>).map<OrderProductModel>(
+        (map['products']).map<OrderProductModel>(
           (x) => OrderProductModel.fromMap(x as Map<String, dynamic>),
         ),
       ),
       userId: map['user_id'] as int,
       address: map['address'] as String,
-      cpf: map['cpf'] as String,
+      cpf: map['CPF'] as String,
       paymentTypeId: map['payment_method_id'] as int,
     );
   }
