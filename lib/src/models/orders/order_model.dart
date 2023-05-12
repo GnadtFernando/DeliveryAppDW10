@@ -49,7 +49,7 @@ class OrderModel {
       ),
       userId: map['user_id'] as int,
       address: map['address'] as String,
-      cpf: map['CPF'] as String,
+      cpf: map['CPF'].toString(),
       paymentTypeId: map['payment_method_id'] as int,
     );
   }
