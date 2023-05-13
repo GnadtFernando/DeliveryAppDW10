@@ -1,3 +1,4 @@
+import 'detail/order_detail_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -37,11 +38,24 @@ class _OrderPageState extends State<OrderPage> with Loader, Messages {
             hideLoader();
             showError(controller.errorMessage ?? 'Erro interno');
             break;
+          case OrderStateStatus.showDetailModal:
+            hideLoader();
+            showOrderDetails();
+            break;
         }
       });
       controller.findOrders();
     });
     super.initState();
+  }
+
+  void showOrderDetails() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const OrderDetailModal();
+      },
+    );
   }
 
   @override
