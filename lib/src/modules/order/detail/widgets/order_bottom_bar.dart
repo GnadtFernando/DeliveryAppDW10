@@ -20,12 +20,14 @@ class OrderBottomBar extends StatelessWidget {
           image: 'assets/images/icons/finish_order_white_ico.png',
           buttonLabel: 'Finalizar',
         ),
+        SizedBox(width: 8),
         OrderBottomBarButton(
           borderRadius: BorderRadius.zero,
           buttonColor: Colors.green,
           image: 'assets/images/icons/confirm_order_white_icon.png',
           buttonLabel: 'Confirmar',
         ),
+        SizedBox(width: 8),
         OrderBottomBarButton(
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(10),
